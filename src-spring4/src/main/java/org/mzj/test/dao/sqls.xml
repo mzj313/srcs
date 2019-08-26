@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 本文件仅用于多表复杂的查询，不要格式化此文件 -->
+
+<sqls>
+    <sql name="user.findUsers">
+        <![CDATA[
+    select * from t_user where name=:name
+        ]]>
+    </sql>
+    <sql name="user.updateUser">
+        <![CDATA[
+    update t_user t set t.name = :name where id = :id
+        ]]>
+    </sql>
+
+</sqls>

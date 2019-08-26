@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<title>测试视频播放</title>
+	</head>
+	<body onload="func()">
+		<div id="test"></div>
+		<button id="play" onclick = "play()">播放</button>
+		<script>
+		function func(){
+			var src = 'http://192.168.185.38:8380/web1/static/mp4/cat.mp4';
+			var str = '<div >'+
+			 '<video id="video1"  controls="controls" autobuffer="autobuffer" style="display:">'+
+						'<source type="video/mp4" src="'+src+'">'+
+					'</video>'+
+				'</div>';
+				document.getElementById("test").innerHTML = str;
+				
+		}
+		function play(){
+			var video = document.getElementById('video1');
+			video.style.display='block';
+			alert(video.readyState);
+			alert(video.networkState)
+			if(video.paused){
+				video.play();
+			}else{
+				video.pause();
+			}
+		}
+			
+		</script>
+	</body>	
+</html>
